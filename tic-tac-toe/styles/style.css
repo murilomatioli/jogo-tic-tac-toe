@@ -1,0 +1,69 @@
+.game-wrapper {
+
+    height: 100vh;
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+#turn {
+    position: absolute;
+    display: flex;
+    top: 15%;
+    transform: translateY(-50%);
+    height: 50px;
+    width: 100%;
+    justify-content: center;
+}
+.turn-text {
+    position: absolute;
+    top: 0;
+}
+.turn-mark {
+    position: absolute;
+    bottom: 0;
+    height: 10px;
+    width: 100%;
+    background-color: rgb(85, 148, 241);
+}
+h2 {
+    display: flex;
+    width: fit-content;
+    left: 20px;
+    position: absolute;
+}
+body {
+    padding: 0;
+    margin: 0;
+}
+.options {
+    display: flex;
+    justify-content: center;
+    top: 0;
+    height: fit-content;
+}
+.game-container {
+    position: absolute;
+    display: grid;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid #333;
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+}
+.game-container div {
+    position: relative;
+    border: 1px solid #333;
+}
+.square-content {
+    font-size: 60px;
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.game-container div:hover {
+    cursor: pointer;
+    background-color: aliceblue;
+}

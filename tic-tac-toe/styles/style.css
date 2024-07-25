@@ -1,5 +1,6 @@
-.game-wrapper {
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap');
 
+.game-wrapper {
     height: 100vh;
     display: flex;
     position: relative;
@@ -10,30 +11,37 @@
     display: flex;
     top: 15%;
     transform: translateY(-50%);
-    height: 50px;
+    height: 60px;
     width: 100%;
     justify-content: center;
 }
 .turn-text {
     position: absolute;
     top: 0;
+    font-size: 20px;
+    color: white;
 }
-.turn-mark {
+#turn-mark {
     position: absolute;
     bottom: 0;
     height: 10px;
     width: 100%;
-    background-color: rgb(85, 148, 241);
+    background-color: #dade73;
 }
 h2 {
     display: flex;
     width: fit-content;
     left: 20px;
     position: absolute;
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
 }
 body {
+    font-family: "Fredoka";
     padding: 0;
     margin: 0;
+    background-color: #1b1b1b;
 }
 .options {
     display: flex;
@@ -42,6 +50,7 @@ body {
     height: fit-content;
 }
 .game-container {
+
     position: absolute;
     display: grid;
     text-align: center;
@@ -65,5 +74,6 @@ body {
 }
 .game-container div:hover {
     cursor: pointer;
-    background-color: aliceblue;
+    filter: brightness(0.9);
+    transition: 0.2s ease;
 }

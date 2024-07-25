@@ -61,6 +61,7 @@ function handleSquareClick(event){
         return;
     }
     turnCounter++;
+    console.log(turnCounter)
     if(turnCounter == 9){
         alert('Empate')
     }

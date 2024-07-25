@@ -30,28 +30,34 @@ function handleSquareClick(event){
     squareIndex = Number(square.getAttribute("data-index"));
 
     let squareContent = document.getElementsByClassName("square-content");
+
     if(squareContent[squareIndex].value != 'X' && squareContent[squareIndex].value != 'O'){
         switchTurn()
         if(turn == 1){
             squareContent[squareIndex].value = 'X'
             squareContent[squareIndex].innerHTML = 'X'
             squares[squareIndex].style.backgroundColor = "#73de93"
+            placeBlock2.play();
         }else{
             squareContent[squareIndex].value = 'O'
             squareContent[squareIndex].innerHTML = 'O'
             squares[squareIndex].style.backgroundColor = "#dade73"
+            placeBlock.play();
         }
         squareContent[squareIndex].style.display = "flex"
     }
     let winner = verifyWin()
     if(winner == 0){
+        winSound.play();
         alert('X ganhou')
-        restartGame();
+        // restartGame();
         return;
     }
     if(winner == 1){
+
+        winSound.play();
         alert('O ganhou')
-        restartGame();
+        // restartGame();
         return;
     }
     turnCounter++;
@@ -161,3 +167,6 @@ function switchPlayer(){
         return 0;
     }
 }
+let placeBlock = new Audio("audio/sounds/placing-sound.mp3")
+let placeBlock2 = new Audio("audio/sounds/placing-sound2.mp3")
+let winSound = new Audio("audio/sounds/win.mp3")

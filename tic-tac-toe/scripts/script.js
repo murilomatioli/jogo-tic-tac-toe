@@ -1,20 +1,11 @@
 let turn = 1;
 let squares = document.getElementsByClassName("square");
 let turnCounter = 0;
-document.addEventListener('DOMContentLoaded', function() {
-
-
-    let squareContent = document.getElementsByClassName("square-content");
-    for (let i = 0; i < squareContent.length; i++) {
-        squareContent[i].style.innerHTML = "";
-    }
-});
+let playerSwitch = "yellow"
 
 function switchTurn() {
 
     let turnMark = document.getElementById("turn-mark")
-    turnMark.style.transition = "ease 1s"
-
 
     let turnText = document.getElementById("play")
     if(turn == 0){
@@ -123,6 +114,10 @@ function verifyWin(){
 
 }
 function restartGame(){
+    let switchCircle = document.getElementById("button-circle")
+    let switchArea = document.getElementById("switch-player")
+    switchArea.style.backgroundColor = "#e3e84f"
+    switchCircle.style.right = "52px"
     let turnMark = document.getElementById("turn-mark")
     let turnText = document.getElementById("play")
 
@@ -137,10 +132,32 @@ function restartGame(){
         squares[i].style.backgroundColor = "#1b1b1b";
     }
 }
-/*function handleSquareClic(event) {
-    event = window.event
-    let square = event.currentTarget; 
-    let squareIndex = square.getAttribute("data-index");
-    squareIndex = Number(squareIndex) + 1
-    console.log(squareIndex)
-}*/
+function switchPlayer(){
+    if(turnCounter > 0){
+        alert("O jogo já começou")
+        return;
+    }
+    let switchCircle = document.getElementById("button-circle")
+    let switchArea = document.getElementById("switch-player")
+    let turnMark = document.getElementById("turn-mark")
+    let turnText = document.getElementById("play")
+
+    if(playerSwitch == "yellow"){
+        turn = 0
+        switchCircle.style.right = "5px"
+        turnText.innerHTML = 'X'
+        playerSwitch = "green"
+        switchArea.style.backgroundColor = "#61e84f"
+       turnMark.style.backgroundColor = "#73de93"
+        return 0;
+    }
+    if(playerSwitch == "green"){
+        turn = 1
+        switchCircle.style.right = "52px"
+        turnText.innerHTML = 'O'
+        playerSwitch = "yellow"
+        switchArea.style.backgroundColor = "#e3e84f"
+        turnMark.style.backgroundColor = "#dade73"
+        return 0;
+    }
+}

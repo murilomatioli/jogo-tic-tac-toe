@@ -18,20 +18,29 @@
             <p class="turn-text">É a vez do <span id="play">O</span></p>
             <span id="turn-mark"></span>
         </div>
-        <div class="game-container">
-            <div class="square" data-index="0" onclick="handleSquareClick()"><span class="square-content"></span></div>
-            <div class="square" data-index="1" onclick="handleSquareClick()"><span class="square-content"></span></div>
-            <div class="square" data-index="2" onclick="handleSquareClick()"><span class="square-content"></span></div>
-            <div class="square" data-index="3" onclick="handleSquareClick()"><span class="square-content"></span></div>
-            <div class="square" data-index="4" onclick="handleSquareClick()"><span class="square-content"></span></div>
-            <div class="square" data-index="5" onclick="handleSquareClick()"><span class="square-content"></span></div>
-            <div class="square" data-index="6" onclick="handleSquareClick()"><span class="square-content"></span></div>
-            <div class="square" data-index="7" onclick="handleSquareClick()"><span class="square-content"></span></div>
-            <div class="square" data-index="8" onclick="handleSquareClick()"><span class="square-content"></span></div>
+        <div id="main-content">
+            <div class="game-container">
+                <div class="square" data-index="0" onclick="handleSquareClick()"><span class="square-content"></span></div>
+                <div class="square" data-index="1" onclick="handleSquareClick()"><span class="square-content"></span></div>
+                <div class="square" data-index="2" onclick="handleSquareClick()"><span class="square-content"></span></div>
+                <div class="square" data-index="3" onclick="handleSquareClick()"><span class="square-content"></span></div>
+                <div class="square" data-index="4" onclick="handleSquareClick()"><span class="square-content"></span></div>
+                <div class="square" data-index="5" onclick="handleSquareClick()"><span class="square-content"></span></div>
+                <div class="square" data-index="6" onclick="handleSquareClick()"><span class="square-content"></span></div>
+                <div class="square" data-index="7" onclick="handleSquareClick()"><span class="square-content"></span></div>
+                <div class="square" data-index="8" onclick="handleSquareClick()"><span class="square-content"></span></div>
+            </div>
+            <div id="options-container">
+                <label for="button-circle" id="switch-label">Quem começa primeiro</label>
+                <div id="switch-player" onclick="switchPlayer()">
+                    <div id="button-circle" name="button-circle"></div>
+                </div>
+            </div>
         </div>
         <div>
             <input type="button" onclick="restartGame()" value="Reiniciar">
         </div>
+
     </div>
 </body>
 </html>
